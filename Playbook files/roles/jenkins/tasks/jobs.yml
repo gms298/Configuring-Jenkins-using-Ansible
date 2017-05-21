@@ -1,0 +1,11 @@
+---
+- name: Using a template to create a job
+  template: src=build.xml.j2 dest=/home/vagrant/build.xml owner=jenkins group=jenkins mode=0644
+
+- name: Creating a job in jenkins
+  shell: java -jar {{ jenkins.library }}/jenkins-cli.jar -s http://localhost:8080 create-job 'JSPDEMO' < /home/vagrant/build.xml
+  become: yes
+
+- name: Building the job in jenkins
+  shell: java -jar {{ jenkins.library }}/jenkins-cli.jar -s http://localhost:8080 build 'JSPDEMO'
+  become: yes

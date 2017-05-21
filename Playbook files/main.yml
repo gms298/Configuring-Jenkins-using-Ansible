@@ -1,0 +1,6 @@
+- name: Execute Ansible Role to Install, Configure and Build a job on Jenkins
+  hosts: jenkins_server
+  become: yes
+  roles:
+    - jenkins
+

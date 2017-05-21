@@ -1,0 +1,13 @@
+---
+# Install Java and other dependencies
+- name: Installing all dependencies
+  include: dependencies.yml
+
+# Install Jenkins
+- name: Setting up and Configuring Jenkins
+  include: jenkins.yml
+
+# Run a job to build JSPDemo Repo
+- name: Setting up and Configuring Jenkins
+  include: jobs.yml
+

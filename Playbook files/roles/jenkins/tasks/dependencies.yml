@@ -1,0 +1,21 @@
+---
+# Install Java 8
+- name: Installing java 8 prerequisites
+  apt: name=python-software-properties
+
+- name: Adding a repository for Java 8
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: Accepting Oracle License
+  debconf: name=oracle-java8-installer question=shared/accepted-oracle-license-v1-1 vtype=select value=true
+
+- name: Installing Java 8
+  apt: name=oracle-java8-installer force=yes
+
+# Install git, curl and maven
+- name: Install other dependencies
+  apt: pkg={{item}} state=installed update_cache=yes cache_valid_time=3600
+  with_items:
+    - git
+    - curl
+    - maven

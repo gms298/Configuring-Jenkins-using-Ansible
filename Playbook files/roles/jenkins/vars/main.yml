@@ -1,0 +1,6 @@
+---
+jenkins:
+  destination: /opt/jenkins
+  library: /var/lib/jenkins
+  repository: 'deb http://pkg.jenkins-ci.org/debian binary/'
+  cli_destination: '/var/lib/jenkins/jenkins-cli.jar'
