@@ -1,2 +1,44 @@
-# Configuring-Jenkins-using-Ansible
-Automatically configure a server running jenkins, setup necessary runtime packages and setup jenkins configuration files using Ansible.
+# Configuring Jenkins using Ansible
+
+## Objectives
+
+* Using ansible, automatically configure a server running jenkins, abiding by the following constraints:
+
+  - Setup necessary runtime packages automatically.
+  - Be able to setup jenkins configuration files automatically.
+  - Be able to automatically setup a job to build [this repo.](https://github.com/CSC-326/JSPDemo)
+
+## Description
+
+The playbook to setup Jenkins can be found [here]().
+
+The tree structure of the playbook is as follows: 
+
+```
+- main.yml                    # The main YML file which gets executed by ansible-playbook
+- roles/
+	- jenkins/
+		- files/
+			- jenkins-ci.org.key
+		- templates/
+			- build.xml.j2
+		- vars/
+			- main.yml
+		- tasks/
+			- main.yml
+			- dependencies.yml
+			- jenkins.yml
+			- jobs.yml
+```
+
+Run `ansible-playbook -i inventory main.yml -s` to automatically start executing the role `jenkins` which will in turn execute all the task files in order.
+
+The file [dependencies.yml]() installs the necessary runtime packages and dependencies required by Jenkins automatically. 
+
+The file [jenkins.yml]() will install Jenkins, Jenkins CLI as well as the `git plugin` required by Jenkins to build the JSPDemo Project. It also **configures Jenkins** automatically by disabling security by appropriately modifying the config.xml file used by Jenkins.
+
+The file [jobs.yml]() will actually use a template to create a job in jenkins as well as build that job.
+
+## Screencast
+
+[Click here](https://www.youtube.com/watch?v=753-g3cD_ts) to view the screencast video.
