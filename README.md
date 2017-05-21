@@ -10,7 +10,7 @@
 
 ## Description
 
-The playbook to setup Jenkins can be found [here]().
+The playbook to setup Jenkins can be found [here](https://github.com/gms298/Configuring-Jenkins-using-Ansible/tree/master/Playbook%20files).
 
 The tree structure of the playbook is as follows: 
 
@@ -33,11 +33,11 @@ The tree structure of the playbook is as follows:
 
 Run `ansible-playbook -i inventory main.yml -s` to automatically start executing the role `jenkins` which will in turn execute all the task files in order.
 
-The file [dependencies.yml]() installs the necessary runtime packages and dependencies required by Jenkins automatically. 
+The file [dependencies.yml](https://github.com/gms298/Configuring-Jenkins-using-Ansible/blob/master/Playbook%20files/roles/jenkins/tasks/dependencies.yml) installs the necessary runtime packages and dependencies required by Jenkins automatically. 
 
-The file [jenkins.yml]() will install Jenkins, Jenkins CLI as well as the `git plugin` required by Jenkins to build the JSPDemo Project. It also **configures Jenkins** automatically by disabling security by appropriately modifying the config.xml file used by Jenkins.
+The file [jenkins.yml](https://github.com/gms298/Configuring-Jenkins-using-Ansible/blob/master/Playbook%20files/roles/jenkins/tasks/jenkins.yml) will install Jenkins, Jenkins CLI as well as the `git plugin` required by Jenkins to build the JSPDemo Project. It also **configures Jenkins** automatically by disabling security by appropriately modifying the config.xml file used by Jenkins.
 
-The file [jobs.yml]() will actually use a template to create a job in jenkins as well as build that job.
+The file [jobs.yml](https://github.com/gms298/Configuring-Jenkins-using-Ansible/blob/master/Playbook%20files/roles/jenkins/tasks/jobs.yml) will actually use a template to create a job in jenkins as well as build that job.
 
 ## Screencast
 
