@@ -1,6 +1,12 @@
 # Configuring Jenkins using Ansible
 
-## Objectives
+## Index
+
+1. [Objectives](#obj)
+2. [Description](#desc)
+3. [Screencast](#screen)
+
+## <a name="obj"></a>Objectives
 
 * Using ansible, automatically configure a server running jenkins, abiding by the following constraints:
 
@@ -8,7 +14,7 @@
   - Be able to setup jenkins configuration files automatically.
   - Be able to automatically setup a job to build [this repo.](https://github.com/CSC-326/JSPDemo)
 
-## Description
+## <a name="desc"></a>Description
 
 The playbook to setup Jenkins can be found [here](https://github.com/gms298/Configuring-Jenkins-using-Ansible/tree/master/Playbook%20files).
 
@@ -39,6 +45,6 @@ The file [jenkins.yml](https://github.com/gms298/Configuring-Jenkins-using-Ansib
 
 The file [jobs.yml](https://github.com/gms298/Configuring-Jenkins-using-Ansible/blob/master/Playbook%20files/roles/jenkins/tasks/jobs.yml) will actually use a template to create a job in jenkins as well as build that job.
 
-## Screencast
+## <a name="screen"></a>Screencast
 
 [Click here](https://www.youtube.com/watch?v=753-g3cD_ts) to view the screencast video.
